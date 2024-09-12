@@ -50,20 +50,19 @@ public class Magpie {
 				response = "Tell me more about your family.";
 			lastTopic = "family";
 		}
+		else if(statement.indexOf("guppy") > -1
+				|| statement.indexOf("dog") >= 0
+				|| statement.indexOf("cat") >= 0
+				|| statement.indexOf("bird") >= 0
+				|| statement.indexOf("hippo") >= 0){
+
+
+			response = "Tell me more about your pet!";
+		}
 		else if(statement.length() == 0) {
 			response = "Say something, please";
 		}
-		else if (statement.indexOf("cat") >= 0
-				|| statement.indexOf("dog") != -1
-				|| statement.indexOf("fish") >= 0
-				|| statement.indexOf("hamster") >= 0)
-		{
-			if(lastTopic.equals("pets")){
-				response = "I never get tired of talking about pets.";
-			}else 
-				response = "Tell me more about your pets.";
-			lastTopic = "pets";
-		}
+		
 		else
 		{
 			response = getRandomResponse();
